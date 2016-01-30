@@ -55,7 +55,7 @@ public class HelloWorldController {
 }
 ```
 
-* Running de application:
+* Running the application:
 ```
 gradle bootRun
 ```
