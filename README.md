@@ -15,7 +15,7 @@ You can get command completion if you run the Spring Boot CLI shell:
 spring shell
 ```
 
-* Create a new proyect with Spring Initializr in:
+* Create a new project with Spring Initializr in:
 
 http://start.spring.io
 
