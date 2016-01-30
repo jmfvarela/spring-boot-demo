@@ -81,11 +81,11 @@ http://localhost:8080/hello/world
 http://localhost:8080/hello/world
 
 # Installing lombok
-Doownload lombok.jar from:
+Download lombok.jar from:
 
 https://projectlombok.org/download.html
 
-Installe in Eclipse with:
+Install in Eclipse with:
 ```
 java -jar lombok.jar install $eclipseDir
 ```
