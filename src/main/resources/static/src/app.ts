@@ -1,9 +1,9 @@
 //our root app component
 import {Component} from 'angular2/core';
 import {bootstrap} from 'angular2/platform/browser';
-import {FirstComponent} from 'src/first-component';
-import {SecondComponent} from 'src/second-component';
-import {DataService} from 'src/data-service';
+import {FirstComponent} from '../src/first-component';
+import {SecondComponent} from '../src/second-component';
+import {DataService} from '../src/data-service';
 import {HTTP_PROVIDERS} from 'angular2/http';
 
 @Component({

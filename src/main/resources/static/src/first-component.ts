@@ -1,10 +1,11 @@
 import {Component} from 'angular2/core';
 import {NgFor} from 'angular2/common';
-import {DataService} from 'src/data-service';
+import {Todo} from '../src/todo';
+import {DataService} from '../src/data-service';
 
 @Component({
   selector: 'first-component',
-  directives: [NgFor]
+  directives: [NgFor],
   template: `
     <div>
       <h2>first component</h2>
@@ -13,7 +14,7 @@ import {DataService} from 'src/data-service';
   `
 })
 export class FirstComponent {
-  private myArray: Array<string> = new Array<string>();
+  private myArray: Array<Todo> = new Array<Todo>();
 
   constructor(private _dataService: DataService) { }
   
@@ -25,7 +26,7 @@ export class FirstComponent {
     this._dataService.load();
   }
   
-  public stringify(elem:Any) {
+  public stringify(elem:any) {
   	return JSON.stringify(elem);
   }
   

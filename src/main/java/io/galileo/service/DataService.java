@@ -8,9 +8,9 @@ public interface DataService<T> {
 
 	List<T> list(JpaRepository<T, Long> jpaRepository);
 	
-	Object get(Long id, JpaRepository<T, Long> jpaRepository);
+	T get(Long id, JpaRepository<T, Long> jpaRepository);
 	
-	Object save(T object, JpaRepository<T, Long> jpaRepository);
+	T save(T object, JpaRepository<T, Long> jpaRepository);
 	
 	Long delete(Long id, JpaRepository<T, Long> jpaRepository);
 }

@@ -1,19 +1,20 @@
-import {Component} from 'angular2/core';
+import {Component} from 'angular2/core'; 
 import {NgFor} from 'angular2/common';
-import {DataService} from 'src/data-service';
+import {Todo} from '../src/todo';
+import {DataService} from '../src/data-service';
 
 @Component({
   selector: 'second-component',
   directives: [NgFor],
   template: `
-    <div>
+    <div> 
       <h2>second component</h2>
       <div *ngFor="#elem of myArray">{{ stringify(elem) }}</div>
     </div>
   `
 })
 export class SecondComponent {
-  private myArray: Array<string> = new Array<string>();
+  private myArray: Array<Todo> = new Array<Todo>();
   
   constructor(private _dataService:DataService) { }
   
@@ -24,10 +25,22 @@ export class SecondComponent {
     
     this._dataService.load();
     
-    this._dataService.create({"username":"test1","name":"name 1","surname":"surname 1","email":null,"photo":null,"enabled":true,"authority":"ROLE_ADMIN","token":0, "password":"changeit"});
+    var todo1:Todo={
+        id:null,
+        version:null,
+        username:"test1",
+        name:"name 1",
+        surname:"surname 1",
+        email:null,
+        photo:null,
+        enabled:true,
+        authority:"ROLE_ADMIN",
+        token:0, 
+        password:"changeit"};
+    this._dataService.create(todo1);
   }
   
-  public stringify(elem:Any) {
+  public stringify(elem:any) {
   	return JSON.stringify(elem);
   }
   

@@ -22,16 +22,16 @@ public class DataServiceImpl<T> implements DataService<T> {
 		return jpaRepository.findAll();		
 	}
 	
-	public Object get(Long id, JpaRepository<T, Long> jpaRepository) {
+	public T get(Long id, JpaRepository<T, Long> jpaRepository) {
 		LOG.info("get - init");
-		Object object = jpaRepository.findOne(id);
+		T object = jpaRepository.findOne(id);
 		if (object==null) throw new DataNotFoundException(id.toString());
 		return object;		
 	}
 	
-	public Object save(T object, JpaRepository<T, Long> jpaRepository) {
+	public T save(T object, JpaRepository<T, Long> jpaRepository) {
 		LOG.info("save - init");
-		Object objectTemp = null;
+		T objectTemp = null;
 		
 		Long id=null;
 		Integer version=null;

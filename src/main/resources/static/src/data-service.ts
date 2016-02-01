@@ -2,8 +2,8 @@ import {Http, Headers} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/share';
 import 'rxjs/add/operator/map'
-import {Todo} from 'src/todo';
 import {Injectable} from 'angular2/core';
+import {Todo} from '../src/todo';
      
 @Injectable()
 export class DataService {
@@ -41,7 +41,7 @@ export class DataService {
     }
      
     update(todo: Todo) {
-        this._http.put(`/users/${todo.id}`, todo)
+        this._http.put(`/users/${todo.id}`, JSON.stringify(todo))
             .map(response => response.json()).subscribe(data => {
             this._dataStore.todos.forEach((todo, i) => {
                 if (todo.id === data.id) { this._dataStore.todos[i] = data; }

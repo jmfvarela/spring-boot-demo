@@ -5,3 +5,5 @@ bin/
 build/
 .project
 .springBeans
+src/main/resources/static/node_modules/
+src/main/resources/static/dist/
