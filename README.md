@@ -1,3 +1,7 @@
+Proof of concept: application with Spring Boot, REST services, testing with Spock, components Angular2, etc.
+
+Tested in Windows.
+
 # Intro 
 This project has been generated with Spring Boot following theese steps:
 * Download and install Spring Boot CLI from:
@@ -91,12 +95,12 @@ java -jar lombok.jar install $eclipseDir
 ```
 Remember to exit from Eclipse and enter again.
 
-# Next steps
+# To do
 - Devtools
 - Spring security (//	compile('org.springframework.boot:spring-boot-starter-security'))
 see https://github.com/spring-projects/spring-data-examples/tree/master/rest/security
 - Cache
-- Plantillas velocity
+- Velocity templates
 - AOP / AspectJ
 - Session?
 - Mail
