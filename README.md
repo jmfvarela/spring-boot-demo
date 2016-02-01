@@ -96,6 +96,8 @@ java -jar lombok.jar install $eclipseDir
 Remember to exit from Eclipse and enter again.
 
 # To do
+- Finish components with Angular2
+- Tests with Spock
 - Devtools
 - Spring security (//	compile('org.springframework.boot:spring-boot-starter-security'))
 see https://github.com/spring-projects/spring-data-examples/tree/master/rest/security
