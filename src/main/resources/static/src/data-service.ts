@@ -21,19 +21,17 @@ export class DataService {
     }
          
     load() {
-        this._http.get('/users').map(response => response.json()).subscribe(data => {
+        this._http.get('http://localhost:8080/users').map(response => response.json()).subscribe(data => {
             this._dataStore.todos = data;
             this._todosObserver.next(this._dataStore.todos);
         }, error => console.log('Could not load todos.'));
     }
      
     create(todo: Todo) {
-    	console.log('JMFV: '+JSON.stringify(todo));
-    	
 	    let headers = new Headers();
 	    headers.append('Content-Type', 'application/json');
 	    
-        this._http.post('/users', JSON.stringify(todo), {headers: headers})
+        this._http.post('http://localhost:8080/users', JSON.stringify(todo), {headers: headers})
             .map(response => response.json()).subscribe(data => {
             this._dataStore.todos.push(data);   
             this._todosObserver.next(this._dataStore.todos);
@@ -41,7 +39,7 @@ export class DataService {
     }
      
     update(todo: Todo) {
-        this._http.put(`/users/${todo.id}`, JSON.stringify(todo))
+        this._http.put(`http://localhost:8080/users/${todo.id}`, JSON.stringify(todo))
             .map(response => response.json()).subscribe(data => {
             this._dataStore.todos.forEach((todo, i) => {
                 if (todo.id === data.id) { this._dataStore.todos[i] = data; }
@@ -52,7 +50,7 @@ export class DataService {
     }
      
     delete(todo: Todo) {
-        this._http.delete(`/api/todos/${todo.id}`).subscribe(response => {
+        this._http.delete(`http://localhost:8080/users/${todo.id}`).subscribe(response => {
             this._dataStore.todos.forEach((t, index) => {
                 if (t.id === todo.id) { this._dataStore.todos.splice(index, 1); }
             });
