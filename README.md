@@ -84,7 +84,7 @@ http://localhost:8080/hello/world
 
 http://localhost:8080/hello/world
 
-# Installing lombok
+# Installing plugin lombok for Eclipse
 Download lombok.jar from:
 
 https://projectlombok.org/download.html
