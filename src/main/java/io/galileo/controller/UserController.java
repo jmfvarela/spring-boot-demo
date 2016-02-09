@@ -1,6 +1,5 @@
 package io.galileo.controller;
 
-import io.galileo.arq.DataNotFoundException;
 import io.galileo.domain.User;
 import io.galileo.repository.UserRepository;
 import io.galileo.service.DataService;
@@ -12,7 +11,6 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,13 +48,7 @@ public class UserController {
 
 	@RequestMapping(value="/{id}", method = RequestMethod.DELETE)
 	public @ResponseBody Long delete(@PathVariable Long id) {
-		LOG.info("delete - init");
-		try {
-			userRepository.delete(id);
-		} catch (EmptyResultDataAccessException e) {
-			throw new DataNotFoundException(id.toString());
-		}
-		return id;
+		return dataService.delete(id, userRepository);
 	}
 	
 }
